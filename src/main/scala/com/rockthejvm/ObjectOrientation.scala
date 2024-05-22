@@ -27,7 +27,8 @@ object ObjectOrientation extends App {
 
   // abstract class
   abstract class WalkingAnimal {
-    val hasLegs = true // by default public, can restrict by adding protected or private
+    val hasLegs =
+      true // by default public, can restrict by adding protected or private
     def walk(): Unit
   }
 
@@ -44,7 +45,9 @@ object ObjectOrientation extends App {
   class Crocodile extends Animal with Carnivore with Philosopher {
     override def eat(animal: Animal): Unit = println("I am eating you, animal!")
 
-    override def ?!(thought: String): Unit = println(s"I was thinking: $thought")
+    override def ?!(thought: String): Unit = println(
+      s"I was thinking: $thought"
+    )
   }
 
   val aCroc = new Crocodile
@@ -58,7 +61,9 @@ object ObjectOrientation extends App {
 
   // anonymous classes
   val dinosaur = new Carnivore {
-    override def eat(animal: Animal): Unit = println("I am a dinosaur so I can eat pretty much anything")
+    override def eat(animal: Animal): Unit = println(
+      "I am a dinosaur so I can eat pretty much anything"
+    )
   }
 
   /*
@@ -88,7 +93,8 @@ object ObjectOrientation extends App {
     val canLiveIndefinitely = false
   }
 
-  val animalsCanLiveForever = Animal.canLiveIndefinitely // "static" fields/methods
+  val animalsCanLiveForever =
+    Animal.canLiveIndefinitely // "static" fields/methods
 
   /*
    case classes = lightweight data structures with some boilerplate
@@ -96,7 +102,7 @@ object ObjectOrientation extends App {
    - serialization
    - companion with apply
    - pattern matching
-  */
+   */
   case class Person(name: String, age: Int)
   // may be constructed without new
   val bob = Person("Bob", 54) // Person.apply("Bob", 54)
@@ -119,7 +125,7 @@ object ObjectOrientation extends App {
   }
 
   // using a generic with a concrete type
-  val aList: List[Int] = List(1,2,3) // List.apply(1,2,3)
+  val aList: List[Int] = List(1, 2, 3) // List.apply(1,2,3)
   val first = aList.head // int
   val rest = aList.tail
   val aStringList = List("hello", "Scala")
@@ -135,6 +141,5 @@ object ObjectOrientation extends App {
   val reversedList = aList.reverse // returns a NEW list
 
   // Point #2: Scala is closest to the OO ideal
-
 
 }
